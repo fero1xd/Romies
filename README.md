@@ -14,7 +14,7 @@ This **API** supports \
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 
 ```git
-git clone
+git clone https://github.com/FeroniK/Movies-rest-api.git
 ```
 
 ## Usage
