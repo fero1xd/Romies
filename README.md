@@ -26,14 +26,15 @@ git clone https://github.com/FeroniK/Movies-rest-api.git
 # Install all the packages
 npm i
 
-# Start the server
-npm start
-
 # Then create a .env file with the following content
-
 EMAIL_USERNAME=YOUR EMAIL
 EMAIL_PASSWORD=YOUR EMAIL PASSWORD
 DBURL=YOUR MONGO DB URL
+
+# Start the server
+npm start
+
+
 
 ```
 
