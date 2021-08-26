@@ -3,6 +3,7 @@ const User = require('../../models/userSchema');
 const { check, validationResult } = require('express-validator');
 const Email = require('../../utils/email');
 const crypto = require('crypto');
+const { authLimiter } = require('../../utils/limiters');
 
 // @desc    Register Route
 // @access  Public
@@ -10,6 +11,7 @@ const crypto = require('crypto');
 // @method  POST
 router.post(
   '/',
+  authLimiter,
   [
     check('name', 'Name is required').not().isEmpty(),
     check('email', 'Email should be valid').isEmail(),

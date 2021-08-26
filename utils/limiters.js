@@ -7,7 +7,7 @@ exports.authLimiter = rateLimit({
     status: 'error',
     error: {
       message:
-        'You recently create too many Accounts,\n Please  try again after some time',
+        'You recently made too many requests, Please  try again after some time',
     },
   },
 });

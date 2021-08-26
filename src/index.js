@@ -7,7 +7,7 @@ const connectDB = require('../utils/connectDB');
 const movieRoute = require('../routes/api/movies');
 const userRoute = require('../routes/api/users');
 const auth = require('../middleware/auth');
-const { authLimiter, mainLimiter } = require('../utils/limiters');
+const { mainLimiter } = require('../utils/limiters');
 const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
@@ -31,7 +31,7 @@ app.use(xss());
 app.use(compression());
 
 app.use('/api/v1/movies', mainLimiter, auth, movieRoute);
-app.use('/api/v1/users', authLimiter, userRoute);
+app.use('/api/v1/users', userRoute);
 
 app.listen(3000, () => {
   console.log('App started on port 3000');

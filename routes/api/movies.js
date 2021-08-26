@@ -74,4 +74,18 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/random', async (req, res) => {
+  const movies = await Movie.find();
+
+  const randomMovie = movies[Math.floor(Math.random() * movies.length)];
+
+  res.json({
+    status: 'success',
+    total: 1,
+    data: {
+      movie: randomMovie,
+    },
+  });
+});
+
 module.exports = router;
