@@ -14,10 +14,13 @@ router.get('/', async (req, res) => {
 
     // Advanced filtering
 
-    const queryString = JSON.stringify(queryObj);
-    queryString.replace(/\b(gte|gt|lte|lt)\b/, (match) => `$${match}`);
+    let queryString = JSON.stringify(queryObj);
+    queryString = queryString.replace(
+      /\b(gte|gt|lte|lt)\b/,
+      (match) => `$${match}`
+    );
+
     let query = Movie.find(JSON.parse(queryString));
-    query = query.select('-__v -_id');
 
     // Sorting
     if (req.query.sort) {
@@ -28,7 +31,7 @@ router.get('/', async (req, res) => {
     // Limiting
     if (req.query.fields) {
       const fields = req.query.fields.split(',').join(' ');
-      query = query.select(fields);
+      query = query.select(`${fields} -_id`);
     } else {
       query = query.select('-__v -_id');
     }
@@ -70,7 +73,7 @@ router.get('/', async (req, res) => {
       },
     });
   } catch (error) {
-    console.log(error.message);
+    console.log(error);
   }
 });
 
