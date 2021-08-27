@@ -11,7 +11,7 @@ This **API** supports \
 
 ## Installation
 
-Use the package manager [npm](https://www.npmjs.com/) to install foobar.
+Use the package manager [npm](https://www.npmjs.com/)
 
 ```git
 git clone https://github.com/FeroniK/Movies-rest-api.git
