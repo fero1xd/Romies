@@ -11,7 +11,7 @@ This **API** supports \
 
 ## Installation
 
-Use the package manager [npm](https://www.npmjs.com/)
+Clone the repository
 
 ```git
 git clone https://github.com/FeroniK/Movies-rest-api.git
