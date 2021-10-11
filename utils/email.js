@@ -20,15 +20,6 @@ module.exports = class Email {
   }
 
   async send(template, subject) {
-    // 1) Render a html on a pug template
-    // const html = pug.renderFile(
-    //   `${__dirname}/../views/emails/${template}.pug`,
-    //   {
-    //     firstName: this.firstName,
-    //     url: this.url,
-    //     subject,
-    //   }
-    // );
 
     // 2) Email mailOptions
     const mailOptions = {
@@ -53,7 +44,7 @@ module.exports = class Email {
   async sendVerificationEmail() {
     await this.send(
       'verification',
-      'Please verify your identity in order to use Natours'
+      'Please verify your identity in order to use Movies API'
     );
   }
 };
